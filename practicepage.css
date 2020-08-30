@@ -14,16 +14,20 @@
 }
 .card:hover{
     color: white;
-    background: linear-gradient(blue,	indigo);
+    /*background-color: #BB2124;*/
+    background: linear-gradient(#BB2124,#701315);
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
-.btn-white{
+.btn-light{
     position: absolute;
-    border: white;
+    border-radius:0px;
 }
-.btn-white:hover{
-    background: indigo;
-    color: white;
-} 
-  
+    /*width:120px;
+    height:60px;
+    margin-left:35px;
+    display:block;
+    background-color:gray;
+    color:white;
+    border: none;
+    outline:none;
