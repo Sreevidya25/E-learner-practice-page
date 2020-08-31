@@ -6,8 +6,8 @@
 }
 .card{
     padding-bottom: 30px;
-    border-radius: 1px;
-    /*background: linear-gradient(lightblue,white);*/
+    /*border-radius: 1px;
+    background: linear-gradient(lightblue,white);*/
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     cursor: pointer;
@@ -15,13 +15,16 @@
 .card:hover{
     color: white;
     /*background-color: #BB2124;*/
-    background: linear-gradient(#BB2124,#701315);
+    background: linear-gradient(#d9534f,#f0ad4e);
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
-.btn-light{
+.card-btn{
     position: absolute;
-    border-radius:0px;
+    /*border-radius:0px;*/
+}
+.btn-outline-light{
+    position: absolute;
 }
     /*width:120px;
     height:60px;
