@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 	
@@ -102,35 +106,40 @@
 
 error_reporting(0);
 include 'connection.php';
+
 $em=$_POST['username'];
 $pass=$_POST['pass'];
-    
-   if (isset ($_POST['signin'])){
-
-     
-    $select="SELECT * FROM sign_up WHERE user_email='$em'  AND user_password='$pass' ";
+//include 'Sign_up.php';
+//$name=$_POST['first_name'];
+if(isset($_POST['signin'])){
+	
+	$select="SELECT * FROM sign_up WHERE user_email='$em'  AND user_password='$pass' ";
     $query=mysqli_query($conn,$select);
-    $row=mysqli_num_rows($query);
+	$row=mysqli_num_rows($query);
+	
    if($row==1)
     {
-            
+		$row_1 = $query->fetch_array();
+		$_SESSION['username'] = $row_1['user_firstname'];
+		$_SESSION['id'] = $row_1['user_id'];
+		echo "<script>if(swal('Good job!', 'You have logged in successfully!', 'success')){document.location.href='practicepage.php'};</script>";
+		   
         // $data=mysqli_fetch_assoc($query);
         // $_SESSION['name']=$data['name'];
-        ?>
-        <script>
-            alert("You have successfully logged in");
-            window.open('practicepage.html','_self');
-        </script>
-		<?php
+       
 	}
     else
     {
 		?>
             <script>
-                alert("Wrong Email-id and Password!! Try Again");
+                alet("you are mad!");
+				//swal("Wrong!""Wrong Email-id and Password!! Try Again");
                 window.open('Sign_up.php','_self');
             </script>
 		<?php                                                                                              
 	   }    
 	}
+	/*if(isset($_SESSION["user_id"])) {
+		header("Location:praticepage.php");
+	}*/
 ?>

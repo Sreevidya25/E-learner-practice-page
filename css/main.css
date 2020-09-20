@@ -453,3 +453,20 @@ iframe {
     padding-right: 15px;
   }
 }
+
+/*//////////////////////////////////////////////////////////////////
+*/
+.btn-secondery{
+  
+  background-color: transparent;
+  color:black;
+  border: 1px solid #e91d43;
+  
+}
+
+.btn-secondery:hover{
+  background-color: #fa4251;
+  color:white;
+}
+
+
